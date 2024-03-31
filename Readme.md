@@ -66,36 +66,4 @@ Pokiaľ hĺbka stromu presiahne počet atribútov, daná podmnožina datasetu sa
 reprezentuje triedu, ktorá je v pozostalých dátach najviac zastúpená.
 
 ### Známe obmedzenia
-- Algoritmus predpokladá, že strom je na vstupe zapísaný v preorder formáte, a index pri Node vždy špecifikuje 
-    hĺbku, v akej sa daný uzol nachádza. Koreňový uzol má teda index = 0, jeho potomkovia index = 1, atď.
-    Viz príklad (hodnota na uzle v obrazku specifikuje hlbku):
-    ```text
-            0
-          /   \
-         1     1
-      /   \   /   \
-    2      2  2   2
-    ..     .. ..  ..
-    ```
-    Teda vstupný strom by bol vo formáte:
-    ```text
-    Node: 0, th
-      Node: 1, th
-        Node: 2, th
-          Leaf: .
-          Leaf: .
-        Node: 2, th
-          Leaf: .
-          Leaf: .
-      Node: 1, th
-        Node: 2, th
-          Leaf: .
-          Leaf: .
-        Node: 2, th
-          Leaf: .
-          Leaf: .        
-    ```
-- ! Na vstupných stromoch v testoch prvej úlohy teda algoritmus končí chybou, keďže nie su v tomto formáte. V zložke `/data`
-sú uvedené príklady vstupov, na ktorých bol tvorený parser vstupu. Zo zadania som pochopila, že `index_priznaku` reprezentuje
-nielen atribút, na základe ktorého klasifikujeme, ale aj hĺbku, v ktorej sa uzol stromu v preorder formáte nachádza. 
 - Strom definovaný v prvej časti úlohy musí byť odsadený vždy párnym počtom medzier, nie tabov. 

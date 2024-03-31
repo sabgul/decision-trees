@@ -51,9 +51,11 @@ parseTree [line]
   | otherwise = error $ "The tree is in invalid format. Crashing on line: " ++ line
 parseTree (currLine:restLines)
   | isLeaf currLine = L $ parseLeaf currLine
-  | otherwise = let curr_node = parseNode currLine
-                    (leftLines, remainingLines) = splitLeftSubtree restLines ((index curr_node) + 1)
-                    (rightLines, _) = splitRightSubtree remainingLines ((index curr_node) + 1)
+  | otherwise = let leadingSpaces = length $ takeWhile isSpace currLine
+                    curr_node = parseNode currLine
+                    padding = (leadingSpaces `div` 2) + 1
+                    (leftLines, remainingLines) = splitLeftSubtree restLines padding
+                    (rightLines, _) = splitRightSubtree remainingLines padding
                     leftChild = parseTree leftLines
                     rightChild = parseTree rightLines
                 in N $ curr_node { leftChild = leftChild, rightChild = rightChild }
