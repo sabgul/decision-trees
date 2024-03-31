@@ -1,0 +1,13 @@
+Node 0, 5.5
+  Node 1, 2.2
+    Node 2, 2.2
+      Leaf TrX 
+      Leaf TrZ
+    Leaf AA
+  Node 1, 3.0
+    Node 2, 2.1
+      Leaf TrB
+      Leaf TrC 
+    Node 2, 0.5 
+      Leaf TrD 
+      Leaf TrE

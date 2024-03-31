@@ -1,0 +1,9 @@
+Node: 0, 5.5
+  Leaf: TrA
+  Node: 1, 6.6
+    Node: 2, 4.4
+      Leaf: TrB
+      Leaf: TrC 
+    Node: 2, 7.7 
+      Leaf: TrD 
+      Leaf: TrE
